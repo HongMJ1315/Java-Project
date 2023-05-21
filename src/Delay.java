@@ -1,22 +1,23 @@
 import javax.sound.sampled.AudioFormat;
-public class Delay implements Pedal{
+public class Delay extends Pedal{
     private byte[] delayBuffer;
     private int delayBufferSize;
     private int delayPosition;
     private float feedback;
     private int delaySamples;
-
-    public Delay(int delayMillis, float feedback, AudioFormat format) {
-        // 計算延遲的樣本數
+    private AudioFormat format;
+    public Delay(AudioFormat format) {
+        this.format = format;
+    }
+    public void setDelay(int delayMillis, float feedback){
         delaySamples = (int) (delayMillis * format.getSampleRate() / 1000);
-        // 初始化延遲緩衝區
         delayBufferSize = delaySamples * format.getFrameSize();
         delayBuffer = new byte[delayBufferSize];
         delayPosition = 0;
         this.feedback = feedback;
     }
-
     public byte[] process(byte[] input) {
+        if(delayBufferSize == 0) return input;
         byte[] output = new byte[input.length];
 
         for (int i = 0; i < input.length; i++) {

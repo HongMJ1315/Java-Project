@@ -1,3 +1,3 @@
-public interface Pedal {
-    public byte[] process(byte[] input);
+public abstract class Pedal {
+    public abstract byte[] process(byte[] input);
 }

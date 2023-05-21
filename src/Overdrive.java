@@ -1,4 +1,4 @@
-public class Overdrive implements Pedal{
+public class Overdrive extends Pedal{
     private float gain;
     private float threshold;
     public void setGain(float gain, float threshold) {

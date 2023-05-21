@@ -1,4 +1,4 @@
-public class Compressor implements Pedal{
+public class Compressor extends Pedal{
     private float level;
     public void setLevel(float level){
         this.level = level;

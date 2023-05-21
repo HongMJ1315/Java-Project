@@ -124,5 +124,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javafx.media" level="project" />
   </component>
 </module>
