@@ -8,6 +8,9 @@ public class FileIn implements IOIn{
         audioInputStream = AudioSystem.getAudioInputStream(new File(filename));
         audioInputStream = AudioSystem.getAudioInputStream(format, audioInputStream);
     }
+    public FileIn(File file) throws UnsupportedAudioFileException, IOException {
+        audioInputStream = AudioSystem.getAudioInputStream(file);
+    }
 
     public void start() {
         // 不需要實作此方法，僅為相容性考量
