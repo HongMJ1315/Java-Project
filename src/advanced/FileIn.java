@@ -1,3 +1,5 @@
+package advanced;
+
 import javax.sound.sampled.*;
 import java.io.*;
 
@@ -8,8 +10,9 @@ public class FileIn implements IOIn{
         audioInputStream = AudioSystem.getAudioInputStream(new File(filename));
         audioInputStream = AudioSystem.getAudioInputStream(format, audioInputStream);
     }
-    public FileIn(File file) throws UnsupportedAudioFileException, IOException {
+    public FileIn(File file, AudioFormat format) throws UnsupportedAudioFileException, IOException {
         audioInputStream = AudioSystem.getAudioInputStream(file);
+        audioInputStream = AudioSystem.getAudioInputStream(format, audioInputStream);
     }
 
     public void start() {
@@ -29,6 +32,17 @@ public class FileIn implements IOIn{
             audioInputStream.close();
         } catch (IOException e) {
 
+        }
+    }
+
+    public AudioFormat getFormat() {
+        return audioInputStream.getFormat();
+    }
+    public void reset(){
+        try {
+            audioInputStream.reset();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

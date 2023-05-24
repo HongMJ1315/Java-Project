@@ -1,7 +1,6 @@
-import javafx.scene.media.EqualizerBand;
+package advanced;
 
 import javax.sound.sampled.AudioFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Equalizer extends Pedal{

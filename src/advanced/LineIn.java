@@ -1,3 +1,5 @@
+package advanced;
+
 import javax.sound.sampled.*;
 
 public class LineIn implements IOIn{
@@ -18,5 +20,13 @@ public class LineIn implements IOIn{
 
     public void close() {
         targetDataLine.close();
+    }
+
+    public AudioFormat getFormat() {
+        return targetDataLine.getFormat();
+    }
+
+    public void reset(){
+        targetDataLine.flush();
     }
 }

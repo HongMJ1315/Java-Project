@@ -1,3 +1,5 @@
+package advanced;
+
 public interface IOOut {
     public void start() ;
 

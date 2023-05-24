@@ -1,3 +1,5 @@
+package advanced;
+
 public class Compressor extends Pedal{
     private float level;
     public void setLevel(float level){

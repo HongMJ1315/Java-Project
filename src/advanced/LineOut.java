@@ -1,3 +1,5 @@
+package advanced;
+
 import javax.sound.sampled.*;
 
 public class LineOut implements IOOut{
