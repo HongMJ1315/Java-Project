@@ -125,5 +125,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="javafx.media" level="project" />
+    <orderEntry type="library" name="jsyn" level="project" />
   </component>
 </module>
