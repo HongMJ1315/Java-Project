@@ -1,5 +1,11 @@
 package advanced;
 
+import advanced.io.*;
+import advanced.pedal.Compressor;
+import advanced.pedal.Delay;
+import advanced.pedal.Overdrive;
+import advanced.pedal.Pedal;
+
 import javax.swing.*;
 import javax.sound.sampled.*;
 import javax.swing.event.ChangeEvent;
@@ -8,9 +14,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.io.IOException;
 
-public class MainUI {
+public class MultiEffectsProcessorUI {
     private final static int BUFFER_SIZE = 1024;
 
     enum IOInDevice {
@@ -74,7 +79,7 @@ public class MainUI {
     private File file;
 
     private File folder;
-    public MainUI() {
+    public MultiEffectsProcessorUI() {
         initialize();
     }
 
@@ -82,6 +87,9 @@ public class MainUI {
 
         format = new AudioFormat(44100, 16, 1, true, true);
         frame = new JFrame();
+        //固定視窗大小
+        frame.setResizable(false);
+        frame.setSize(400, 300);
         pedalFrame = new JPanel();
         pedalFrame.setLayout(new GridBagLayout());
 
@@ -109,10 +117,10 @@ public class MainUI {
         delayToggle = new JToggleButton("Delay");
 
         gain = 2;
-        overdriveLevel = 25;
-        level = 25;
-        delayMills = 100;
-        feedback = 50f;
+        overdriveLevel = 100;
+        level = 100;
+        delayMills = 500;
+        feedback = 25f;
 
 
         c = new GridBagConstraints();
@@ -225,10 +233,10 @@ public class MainUI {
     }
     private void initObject(){
         gainSlider = new JSlider(1, 10, 2);
-        overdriveLevelSlider = new JSlider(1, 128, 25);
-        levelSlider = new JSlider(10, 128, 25);
-        delaySlider = new JSlider(10, 1000, 100);
-        feedbackSlider = new JSlider(1, 99, 50);
+        overdriveLevelSlider = new JSlider(1, 128, 100);
+        levelSlider = new JSlider(10, 128, 100);
+        delaySlider = new JSlider(10, 1000, 500);
+        feedbackSlider = new JSlider(1, 99, 25);
 
         statusLabel = new JLabel("Status:");
         statusMessageLabel = new JLabel("");
@@ -435,8 +443,7 @@ public class MainUI {
                     folder = fileChooser.getSelectedFile();
                 }
                 updateStatusMessage("Folder Selected " + folder.getName());
-                recodeButton.setEnabled(true);
-            }
+                recodeButton.setEnabled(true);            }
         });
         inDeviceComboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -626,7 +633,7 @@ public class MainUI {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new MainUI();
+                new MultiEffectsProcessorUI();
             }
         });
     }

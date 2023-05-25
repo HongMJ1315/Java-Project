@@ -1,4 +1,4 @@
-package advanced;
+package advanced.pedal;
 
 public class Overdrive extends Pedal{
     private float gain;

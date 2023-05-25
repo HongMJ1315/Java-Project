@@ -1,9 +1,9 @@
-package advanced;
+package advanced.pedal;
 
 import javax.sound.sampled.AudioFormat;
 
 //import javax.sound.sampled.AudioFormat;
-//public class advanced.Delay extends advanced.Pedal{
+//public class advanced.pedal.Delay extends advanced.pedal.Pedal{
 //    private byte[] delayBuffer;
 //    private int delayBufferSize;
 //    private int delayPosition;
@@ -12,7 +12,7 @@ import javax.sound.sampled.AudioFormat;
 //    private int delayOffset;
 //
 //    private AudioFormat format;
-//    public advanced.Delay(AudioFormat format) {
+//    public advanced.pedal.Delay(AudioFormat format) {
 //        this.format = format;
 //    }
 //    public void setDelay(int delayMillis, float feedback){
@@ -24,7 +24,7 @@ import javax.sound.sampled.AudioFormat;
 //        this.feedback = feedback;
 //    }
 //    public byte[] process(byte[] input) {
-//        System.out.println("advanced.Delay");
+//        System.out.println("advanced.pedal.Delay");
 //        byte[] output = new byte[input.length];
 //
 //        for (int i = 0; i < input.length; i++) {

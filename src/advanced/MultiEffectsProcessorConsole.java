@@ -5,9 +5,9 @@ import advanced.io.FileOut;
 import advanced.io.IOIn;
 import advanced.io.IOOut;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioFormat;
 
-public class Main {
+public class MultiEffectsProcessorConsole {
     private final static int BUFFER_SIZE = 1024;
     public static void main(String[] args) {
         try {

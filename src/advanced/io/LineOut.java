@@ -1,4 +1,4 @@
-package advanced;
+package advanced.io;
 
 import javax.sound.sampled.*;
 

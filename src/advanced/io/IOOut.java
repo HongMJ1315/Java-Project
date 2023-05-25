@@ -1,4 +1,4 @@
-package advanced;
+package advanced.io;
 
 public interface IOOut {
     public void start() ;

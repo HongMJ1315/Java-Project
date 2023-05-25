@@ -1,4 +1,4 @@
-package advanced;
+package advanced.pedal;
 
 import javax.sound.sampled.AudioFormat;
 import java.util.HashMap;
