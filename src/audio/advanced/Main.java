@@ -14,7 +14,7 @@ public class Main {
             AudioFormat format = new AudioFormat(44100, 16, 1, true, true);
 
             IOIn lineIn = new FileIn("test.wav", format);
-            IOOut lineOut = new FileOut("output1.wav", format);
+            IOOut lineOut = new FileOut("output.wav", format);
 //            advanced.io.IOOut lineOut = new advanced.io.LineOut(format);
             byte[] buffer = new byte[BUFFER_SIZE];
 
