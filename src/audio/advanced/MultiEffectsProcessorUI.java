@@ -1,10 +1,11 @@
-package advanced;
+package audio.advanced;
 
-import advanced.io.*;
-import advanced.pedal.Compressor;
-import advanced.pedal.Delay;
-import advanced.pedal.Overdrive;
-import advanced.pedal.Pedal;
+import audio.advanced.io.*;
+import audio.advanced.pedal.Compressor;
+import audio.advanced.pedal.Delay;
+import audio.advanced.pedal.Overdrive;
+import audio.advanced.pedal.Pedal;
+import audio.advanced.io.*;
 
 import javax.swing.*;
 import javax.sound.sampled.*;

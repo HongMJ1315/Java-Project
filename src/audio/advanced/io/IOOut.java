@@ -1,4 +1,4 @@
-package advanced.io;
+package audio.advanced.io;
 
 public interface IOOut {
     public void start() ;

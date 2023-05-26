@@ -1,4 +1,4 @@
-package advanced.pedal;
+package audio.advanced.pedal;
 
 public class Compressor extends Pedal{
     private float level;
