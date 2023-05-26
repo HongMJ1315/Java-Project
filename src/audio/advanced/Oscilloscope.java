@@ -1,4 +1,4 @@
-package advanced;
+package audio.advanced;
 
 import com.jsyn.JSyn;
 import com.jsyn.Synthesizer;

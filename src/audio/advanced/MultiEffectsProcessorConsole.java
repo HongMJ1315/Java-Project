@@ -1,9 +1,9 @@
-package advanced;
+package audio.advanced;
 
-import advanced.io.FileIn;
-import advanced.io.FileOut;
-import advanced.io.IOIn;
-import advanced.io.IOOut;
+import audio.advanced.io.FileIn;
+import audio.advanced.io.FileOut;
+import audio.advanced.io.IOIn;
+import audio.advanced.io.IOOut;
 
 import javax.sound.sampled.AudioFormat;
 

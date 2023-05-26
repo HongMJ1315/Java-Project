@@ -1,4 +1,4 @@
-package advanced.io;
+package audio.advanced.io;
 
 import javax.sound.sampled.AudioFormat;
 
