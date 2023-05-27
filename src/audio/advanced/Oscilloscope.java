@@ -57,6 +57,7 @@ public class Oscilloscope extends JApplet{
         synth.stop();
         System.out.println("All done.");
     }
+
     public static void main(String[] args) {
         Oscilloscope applet = new Oscilloscope();
         JAppletFrame frame = new JAppletFrame("ShowWaves", applet);
