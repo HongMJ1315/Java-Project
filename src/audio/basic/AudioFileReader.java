@@ -1,12 +1,12 @@
 package audio.basic;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-import java.awt.*;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -32,11 +32,20 @@ public class AudioFileReader {
     public void createGUI() {
         JFrame frame = new JFrame("Audio Player");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setSize(400, 200); // 設定視窗大小
+        frame.setSize(400, 200);
 
         JButton openButton = new JButton("Open File");
-        openButton.setBackground(Color.CYAN); // 設定按鈕背景顏色
-        openButton.setForeground(Color.WHITE); // 設定按鈕前景顏色
+        openButton.setBackground(Color.CYAN);
+        openButton.setForeground(Color.WHITE);
+        JButton pauseButton = new JButton("Pause");
+        pauseButton.setBackground(Color.CYAN);
+        pauseButton.setForeground(Color.WHITE);
+        JButton resumeButton = new JButton("Resume");
+        resumeButton.setBackground(Color.CYAN);
+        resumeButton.setForeground(Color.WHITE);
+        JButton stopButton = new JButton("Stop");
+        stopButton.setBackground(Color.CYAN);
+        stopButton.setForeground(Color.WHITE);
 
         openButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -44,13 +53,33 @@ public class AudioFileReader {
             }
         });
 
+        pauseButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                pauseAudio();
+            }
+        });
+
+        resumeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                resumeAudio();
+            }
+        });
+
+        stopButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                stopAudio();
+            }
+        });
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(openButton);
+        buttonPanel.add(pauseButton);
+        buttonPanel.add(resumeButton);
+        buttonPanel.add(stopButton);
 
         frame.add(buttonPanel, BorderLayout.CENTER);
         frame.setVisible(true);
     }
-
 
     public void openFile() {
         JFileChooser fileChooser = new JFileChooser();
@@ -58,7 +87,6 @@ public class AudioFileReader {
         if (result == JFileChooser.APPROVE_OPTION) {
             File audioFile = fileChooser.getSelectedFile();
             playAudio(audioFile.getAbsolutePath());
-            handleUserInput();
         }
     }
 
@@ -75,24 +103,6 @@ public class AudioFileReader {
         } catch (LineUnavailableException | UnsupportedAudioFileException | IOException e) {
             System.out.println("Error playing audio: " + e.getMessage());
             e.printStackTrace();
-        }
-    }
-
-    public void handleUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        while (true) {
-            input = scanner.nextLine();
-            if (input.equalsIgnoreCase("pause")) {
-                pauseAudio();
-            } else if (input.equalsIgnoreCase("continue")) {
-                resumeAudio();
-            } else if (input.equalsIgnoreCase("exit")) {
-                stopAudio();
-                break;
-            } else {
-                System.out.println("Invalid input");
-            }
         }
     }
 

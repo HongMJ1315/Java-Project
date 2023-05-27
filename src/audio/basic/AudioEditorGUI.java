@@ -19,7 +19,7 @@ public class AudioEditorGUI extends JFrame {
     private JLabel statusLabel;
 
     public AudioEditorGUI() {
-        setTitle("音频编辑器");
+        setTitle("Audio Editor");
         setSize(400, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

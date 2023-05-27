@@ -87,7 +87,7 @@ public class MultiEffectsProcessorUI {
     private void initialize() {
 
         format = new AudioFormat(44100, 16, 1, true, true);
-        frame = new JFrame();
+        frame = new JFrame("Multi Effects Processor");
         //固定視窗大小
         frame.setResizable(false);
         frame.setSize(400, 300);
@@ -122,7 +122,9 @@ public class MultiEffectsProcessorUI {
         level = 100;
         delayMills = 500;
         feedback = 25f;
-
+        ((Overdrive)overdrive).setGain(gain, overdriveLevel);
+        ((Compressor)compressor).setLevel(level);
+        ((Delay)delay).setDelay(delayMills, feedback);
 
         c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -264,6 +266,12 @@ public class MultiEffectsProcessorUI {
     }
 
     private void initActionListener(){
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                closeAudioProcessing();
+            }
+        });
         overdriveToggle.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 boolean selected = overdriveToggle.isSelected();
@@ -631,11 +639,11 @@ public class MultiEffectsProcessorUI {
     private void updateStatusMessage(String message) {
         statusMessageLabel.setText(message);
     }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new MultiEffectsProcessorUI();
-            }
-        });
-    }
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(new Runnable() {
+//            public void run() {
+//                new MultiEffectsProcessorUI();
+//            }
+//        });
+//    }
 }

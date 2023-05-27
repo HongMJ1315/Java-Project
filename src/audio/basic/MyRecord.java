@@ -22,25 +22,25 @@ public class MyRecord extends JFrame implements ActionListener{
         jp1 = new JPanel();
         jp2 = new JPanel();
         jp3 = new JPanel();
-        Font myFont = new Font("華文新魏",Font.BOLD,30);
-        jl1 = new JLabel("錄音機功能的實現");
-        jl1.setFont(myFont);
+//        Font myFont = new Font("華文新魏",Font.BOLD,30);
+        jl1 = new JLabel("Recorder");
+//        jl1.setFont(myFont);
         jp1.add(jl1);
 
-        captureBtn = new JButton("開始錄音");
+        captureBtn = new JButton("Start Record");
         //對開始錄音按鈕進行註冊監聽
         captureBtn.addActionListener(this);
         captureBtn.setActionCommand("captureBtn");
         //對停止錄音進行註冊監聽
-        stopBtn = new JButton("停止錄音");
+        stopBtn = new JButton("Stop Record");
         stopBtn.addActionListener(this);
         stopBtn.setActionCommand("stopBtn");
         //對播放錄音進行註冊監聽
-        playBtn = new JButton("播放錄音");
+        playBtn = new JButton("Play File");
         playBtn.addActionListener(this);
         playBtn.setActionCommand("playBtn");
         //對儲存錄音進行註冊監聽
-        saveBtn = new JButton("儲存錄音");
+        saveBtn = new JButton("Save File");
         saveBtn.addActionListener(this);
         saveBtn.setActionCommand("saveBtn");
 
@@ -59,7 +59,7 @@ public class MyRecord extends JFrame implements ActionListener{
         playBtn.setEnabled(false);
         saveBtn.setEnabled(false);
         this.setSize(400,300);
-        this.setTitle("錄音機");
+        this.setTitle("Recorder");
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
@@ -155,7 +155,7 @@ public class MyRecord extends JFrame implements ActionListener{
             File file = fileChooser.getSelectedFile();
             try {
                 AudioSystem.write(ais, AudioFileFormat.Type.WAVE, file);
-                JOptionPane.showMessageDialog(this, "錄音已儲存");
+                JOptionPane.showMessageDialog(this, "File Saved");
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {

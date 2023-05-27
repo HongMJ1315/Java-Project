@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SoundEffect:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SoundEffect_jar</output-path>
+    <root id="archive" name="SoundEffect.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="SoundEffect" />
+      <element id="library" level="project" name="javafx.media" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jsyn-17.1.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

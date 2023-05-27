@@ -4,31 +4,52 @@ import com.jsyn.JSyn;
 import com.jsyn.Synthesizer;
 import com.jsyn.devices.AudioDeviceManager;
 import com.jsyn.scope.AudioScope;
-import com.jsyn.swing.JAppletFrame;
 import com.jsyn.unitgen.LineIn;
 import com.jsyn.unitgen.LineOut;
+
 import java.awt.BorderLayout;
-import javax.swing.JApplet;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Oscilloscope extends JApplet{
-    Synthesizer synth;
+public class Oscilloscope {
+    private Synthesizer synth;
     LineIn lineIn;
     LineOut lineOut;
     private AudioScope scope;
-    private void gui(){
+    private JFrame frame;
+    public Oscilloscope() {
+        startAudio();
+        setupGUI();
+    }
+    private void setupGUI() {
         System.out.println("run GUI");
-        setLayout(new BorderLayout());
-        add(BorderLayout.NORTH, new JLabel("ShowWaves in an AudioScope Mod001"));
+        frame = new JFrame("Oscilloscope");
+        frame.setLayout(new BorderLayout());
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                stopAudio();
+            }
+        });
+
         scope = new AudioScope(synth);
         scope.setViewMode(AudioScope.ViewMode.WAVEFORM);
+
         scope.addProbe(lineIn.output);
         scope.start();
-        add(BorderLayout.CENTER, scope.getView());
-        validate();
+
+        frame.add(BorderLayout.CENTER, scope.getView());
+        frame.pack();
+        frame.setVisible(true);
+        scope.getView().setControlsVisible(true);
+
     }
-    @Override
-    public void start() {
+
+    private void startAudio() {
         synth = JSyn.createSynthesizer();
         synth.add(lineIn = new LineIn());
         synth.add(lineOut = new LineOut());
@@ -41,28 +62,12 @@ public class Oscilloscope extends JApplet{
         synth.start(48000, AudioDeviceManager.USE_DEFAULT_DEVICE, numInputChannels,
                 AudioDeviceManager.USE_DEFAULT_DEVICE, numOutputChannels);
         lineOut.start();
+
         System.out.println("Audio passthrough started.");
-        gui();
-        scope.setTriggerMode(AudioScope.TriggerMode.NORMAL);
-        audioScope.start();
-        lineOut.start();
-        scope.getView().setControlsVisible(true);
-        add(BorderLayout.CENTER, scope.getView());
-        try {
-            double time = synth.getCurrentTime();
-            synth.sleepUntil(time + 400.0);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        synth.stop();
-        System.out.println("All done.");
     }
 
-    public static void main(String[] args) {
-        Oscilloscope applet = new Oscilloscope();
-        JAppletFrame frame = new JAppletFrame("ShowWaves", applet);
-        frame.setSize(640, 300);
-        frame.setVisible(true);
-        frame.test();
+    private void stopAudio() {
+        synth.stop();
+        System.out.println("All done.");
     }
 }
