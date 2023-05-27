@@ -110,7 +110,7 @@ public class MultiEffectsProcessorUI {
         isRecode = false;
 
         frame.setBounds(100, 100, 400, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
         overdriveToggle = new JToggleButton("Overdrive");
