@@ -86,6 +86,7 @@ public class Main extends JFrame implements ActionListener {
             effect=new MultiEffectsProcessorUI();
         }
         else if(e.getSource()==OscilloscopeButton){
+            System.out.println("OscilloscopeButton");
             myScope = new Oscilloscope();
         }
     }
