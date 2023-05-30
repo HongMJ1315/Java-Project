@@ -24,7 +24,7 @@ public class AudioEditorGUI extends JFrame {
         setTitle("Audio Editor");
         setSize(400, 250);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         // 創建ui
         JPanel panel = new JPanel(new GridLayout(5, 1, 10, 10));
