@@ -278,8 +278,8 @@ public class AudioEditorGUI extends JFrame {
             audioClip.start();
             isPaused = false;
             statusLabel.setText("Playing...");
-            mergeButton.setEnabled(false); // 禁用merge按钮
-            segmentButton.setEnabled(false); // 禁用cut按钮
+//            mergeButton.setEnabled(false); // 禁用merge按钮
+//            segmentButton.setEnabled(false); // 禁用cut按钮
             pauseButton.setText("Pause"); // 設為"Pause"
         }
     }

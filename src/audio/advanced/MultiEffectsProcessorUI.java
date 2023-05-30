@@ -66,8 +66,8 @@ public class MultiEffectsProcessorUI {
     private boolean isClosed;
     private boolean isRecode;
     private float gain;
-    private float overdriveLevel;
-    private float level;
+    private int overdriveLevel;
+    private int level;
     private int delayMills;
     private float feedback;
     private IOIn lineIn;
@@ -117,11 +117,11 @@ public class MultiEffectsProcessorUI {
         compressorToggle = new JToggleButton("Compressor");
         delayToggle = new JToggleButton("Delay");
 
-        gain = 1.25f;
+        gain = 2.0f;
         overdriveLevel = 100;
         level = 100;
         delayMills = 500;
-        feedback = 25f;
+        feedback = 0.25f;
         ((Overdrive)overdrive).setGain(gain, overdriveLevel);
         ((Compressor)compressor).setLevel(level);
         ((Delay)delay).setDelay(delayMills, feedback);
@@ -235,11 +235,11 @@ public class MultiEffectsProcessorUI {
         frame.setVisible(true);
     }
     private void initObject(){
-        gainSlider = new JSlider(100, 200, 125);
-        overdriveLevelSlider = new JSlider(1, 128, 100);
-        levelSlider = new JSlider(10, 128, 100);
+        gainSlider = new JSlider(100, 1000, 200);
+        overdriveLevelSlider = new JSlider(1, 127, 100);
+        levelSlider = new JSlider(10, 127, 100);
         delaySlider = new JSlider(10, 1000, 500);
-        feedbackSlider = new JSlider(1, 99, 25);
+        feedbackSlider = new JSlider(0, 100, 25);
 
         statusLabel = new JLabel("Status:");
         statusMessageLabel = new JLabel("");
@@ -301,14 +301,14 @@ public class MultiEffectsProcessorUI {
         overdriveLevelSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 int value = overdriveLevelSlider.getValue();
-                overdriveLevel = (float) value;
+                overdriveLevel = value;
                 ((Overdrive)overdrive).setGain(gain, overdriveLevel);
             }
         });
         levelSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 int value = levelSlider.getValue();
-                level = (float) value;
+                level = value;
                 ((Compressor)compressor).setLevel(level);
 
             }

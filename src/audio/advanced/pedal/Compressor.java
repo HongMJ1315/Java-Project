@@ -1,8 +1,8 @@
 package audio.advanced.pedal;
 
 public class Compressor extends Pedal{
-    private float level;
-    public void setLevel(float level){
+    private int level;
+    public void setLevel(int level){
         this.level = level;
     }
     public byte[] process(byte[] input){

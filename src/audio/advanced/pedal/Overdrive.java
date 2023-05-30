@@ -2,8 +2,9 @@ package audio.advanced.pedal;
 
 public class Overdrive extends Pedal{
     private float gain;
-    private float threshold;
-    public void setGain(float gain, float threshold) {
+    private int threshold;
+    public void setGain(float gain, int threshold) {
+        System.out.println("gain: " + gain + ", threshold: " + threshold);
         this.gain = gain;
         this.threshold = threshold;
     }
