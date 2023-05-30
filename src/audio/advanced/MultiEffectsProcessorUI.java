@@ -117,7 +117,7 @@ public class MultiEffectsProcessorUI {
         compressorToggle = new JToggleButton("Compressor");
         delayToggle = new JToggleButton("Delay");
 
-        gain = 2;
+        gain = 1.25f;
         overdriveLevel = 100;
         level = 100;
         delayMills = 500;
@@ -235,7 +235,7 @@ public class MultiEffectsProcessorUI {
         frame.setVisible(true);
     }
     private void initObject(){
-        gainSlider = new JSlider(1, 10, 2);
+        gainSlider = new JSlider(100, 200, 125);
         overdriveLevelSlider = new JSlider(1, 128, 100);
         levelSlider = new JSlider(10, 128, 100);
         delaySlider = new JSlider(10, 1000, 500);
@@ -293,7 +293,7 @@ public class MultiEffectsProcessorUI {
         gainSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 int value = gainSlider.getValue();
-                gain = (float) value;
+                gain = ((float) value) / 100;
                 ((Overdrive)overdrive).setGain(gain, overdriveLevel);
 
             }

@@ -19,7 +19,7 @@ public class Main extends JFrame implements ActionListener {
     private MultiEffectsProcessorUI effect;
     private Oscilloscope myScope;
     public Main() {
-        setTitle("音頻基礎實現");
+        setTitle("Java Audio Processor");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         ImageIcon backgroundIcon = new ImageIcon(getClass().getResource("music.png"));
