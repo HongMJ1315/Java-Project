@@ -236,8 +236,8 @@ public class MultiEffectsProcessorUI {
     }
     private void initObject(){
         gainSlider = new JSlider(100, 1000, 200);
-        overdriveLevelSlider = new JSlider(1, 127, 100);
-        levelSlider = new JSlider(10, 127, 100);
+        overdriveLevelSlider = new JSlider(0, 127, 100);
+        levelSlider = new JSlider(0, 127, 100);
         delaySlider = new JSlider(10, 1000, 500);
         feedbackSlider = new JSlider(0, 100, 25);
 
