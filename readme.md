@@ -37,7 +37,7 @@
 ![](https://hackmd.io/_uploads/S1NYoqTL2.png)
 * MERGE MUSIC:回彈出視窗選擇兩個要合併的音檔,合併的音檔會出現在專案資料夾
 * CUT MUSIC:首先先輸出要音檔切割的開始跟結束時間,然後按右下角的choose file
-  button來選擇要切割的音檔,再按右上角CUT MUSIC就完成切割音檔動作
+  button來選擇要切割的音檔,再按右上角CUT MUSIC就完成切割音檔動作且存到專案資料夾裡
 * PLAY,PAUSE:可以測試音檔是否被正確的合併或切割,可以選擇合併或切割的音檔來確認
   是否能正常撥放,並有暫停跟繼續撥放的功能(繼續撥放的功能再按下PAUSE button才有)
 
@@ -61,3 +61,15 @@
 ![](https://hackmd.io/_uploads/rkbjicTIn.png)
 * Trigger Level：調整視波器的靈敏度
 * YScale：震幅放大倍率
+
+
+## 架構圖
+![](https://hackmd.io/_uploads/Hy5dth683.png)
+橘色為imterface或abstract class<br>
+紅色為class<br>
+綠色為package<br>
+
+## Demo
+<div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8MliEoMIrGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
