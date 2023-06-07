@@ -5,11 +5,11 @@
 ### UI及功能
 
 #### 初始畫面
-![](https://hackmd.io/_uploads/rkEwsqpUh.png)
+![](https://hackmd.io/_uploads/rkEwsqpUh.png)<br>
 初始頁面底下有六個按鍵，這六個按鍵可以彈出各功能的視窗
 
 #### 讀檔
-![](https://hackmd.io/_uploads/BJxdo5682.png)
+![](https://hackmd.io/_uploads/BJxdo5682.png)<br>
 讀檔頁面有四個按鍵
 * Open File：會彈出檔案讀取視窗，可以選擇聲音檔案
 * Pause：暫停音檔撥放
@@ -17,7 +17,7 @@
 * Stop：關閉音檔
 
 #### 錄音
-![](https://hackmd.io/_uploads/SJ8_jqp82.png)
+![](https://hackmd.io/_uploads/SJ8_jqp82.png)<br>
 錄音頁面有四個按鍵
 * Start Record：開始錄音
 * Stop Record：停止錄音
@@ -26,7 +26,7 @@
 
 
 #### 混音
-![](https://hackmd.io/_uploads/S1aujqa8n.png)
+![](https://hackmd.io/_uploads/S1aujqa8n.png)<br>
 混音頁面有三個按鍵
 * Select Files：會彈出檔案選擇視窗，可以選擇兩個檔案
 * Select Output File：選擇輸出資料夾
@@ -34,7 +34,7 @@
 
 
 #### 音訊裁切/合併
-![](https://hackmd.io/_uploads/S1NYoqTL2.png)
+![](https://hackmd.io/_uploads/S1NYoqTL2.png)<br>
 * MERGE MUSIC:回彈出視窗選擇兩個要合併的音檔,合併的音檔會出現在專案資料夾
 * CUT MUSIC:首先先輸出要音檔切割的開始跟結束時間,然後按右下角的choose file
   button來選擇要切割的音檔,再按右上角CUT MUSIC就完成切割音檔動作且存到專案資料夾裡
@@ -42,7 +42,7 @@
   是否能正常撥放,並有暫停跟繼續撥放的功能(繼續撥放的功能再按下PAUSE button才有)
 
 #### 綜合效果器
-![](https://hackmd.io/_uploads/HypYicaLn.png)
+![](https://hackmd.io/_uploads/HypYicaLn.png)<br>
 * Overdrive：左邊Overdrive按鈕為單獨的效果開關，Gain拉條為增益強度，Level拉條為截波後的震幅
 * Compressor：左邊Compressor按鈕為單獨的效果開關，Level拉條為截波後的震幅
 * Delay：左邊Delay按鈕為單獨的效果開關，Delay拉條為延遲時間，Feedback為回音強度
@@ -58,13 +58,13 @@
 
 
 #### 視波器
-![](https://hackmd.io/_uploads/rkbjicTIn.png)
+![](https://hackmd.io/_uploads/rkbjicTIn.png)<br>
 * Trigger Level：調整視波器的靈敏度
 * YScale：震幅放大倍率
 
 
 ## 架構圖
-![](https://hackmd.io/_uploads/Hy5dth683.png)
+![](https://hackmd.io/_uploads/Hy5dth683.png)<br>
 橘色為imterface或abstract class<br>
 紅色為class<br>
 綠色為package<br>
