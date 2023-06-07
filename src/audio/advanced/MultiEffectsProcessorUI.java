@@ -258,7 +258,7 @@ public class MultiEffectsProcessorUI {
         chooseFileButton.setName("chooseFileButton");
         saveFileButton = new JButton("Save File");
         saveFileButton.setName("saveFileButton");
-        recodeButton = new JButton("Recode");
+        recodeButton = new JButton("Record");
         recodeButton.setName("recodeButton");
         recodeButton.setEnabled(false);
         chooseFloderButton = new JButton("Choose Folder");
