@@ -1,0 +1,371 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "audio.Main",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_718837726 { 
+   	label=advanced
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   MultiEffectsProcessorUI258518842[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MultiEffectsProcessorUI</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- closeAudioProcessing()</TD></TR>
+<TR><TD ALIGN="LEFT" >- initActionListener()</TD></TR>
+<TR><TD ALIGN="LEFT" >- initObject()</TD></TR>
+<TR><TD ALIGN="LEFT" >- initPedalFrame()</TD></TR>
+<TR><TD ALIGN="LEFT" >- initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- startAudioProcessing()</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateStatusMessage(message: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Oscilloscope258518842[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Oscilloscope</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- startAudio()</TD></TR>
+<TR><TD ALIGN="LEFT" >- stopAudio()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+subgraph cluster_10098514 {
+   	label=pedal
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+
+   Compressor1796506170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Compressor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   level: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ process(input: byte[]): byte[]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Delay1796506170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Delay</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ process(input: byte[]): byte[]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Overdrive1796506170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Overdrive</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ process(input: byte[]): byte[]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Pedal1796506170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Pedal</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ process(input: byte[]): byte[]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+}
+
+subgraph cluster_187709838 {
+   	label=io
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+
+   FileIn658507866[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FileIn</TD></TR>
+<HR/>
+
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ read(buffer: byte[], offset: int, length: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ reset()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ start()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FileOut658507866[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FileOut</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ start()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ write(buffer: byte[], offset: int, length: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LineIn658507866[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LineIn</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ read(buffer: byte[], offset: int, length: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ reset()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ start()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LineOut658507866[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LineOut</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ start()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ write(buffer: byte[], offset: int, length: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+}
+}
+
+subgraph cluster_93166550 {
+   	label=audio
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   Main93166550[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
+<HR/>
+
+<TR><TD ALIGN="LEFT" >+ actionPerformed(e: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+}
+
+subgraph cluster_93508654 {
+   	label=basic
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   AudioEditorGUI634084330[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AudioEditorGUI</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >- mergeAudioFiles(files: File[])</TD></TR>
+<TR><TD ALIGN="LEFT" >- pauseAudio()</TD></TR>
+<TR><TD ALIGN="LEFT" >- playAudio()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ run()</TD></TR>
+<TR><TD ALIGN="LEFT" >- segmentAudioFile(inputFile: File, startTime: double, endTime: double)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AudioFileReader634084330[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AudioFileReader</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createGUI()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >+ openFile()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pauseAudio()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ playAudio(filePath: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readFile()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ resumeAudio()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stopAudio()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AudioMixer634084330[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AudioMixer</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- getMinimumLength(audioStreams: AudioInputStream[]): long</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >- mixAudio()</TD></TR>
+<TR><TD ALIGN="LEFT" >- mixAudioStreams(audioStreams: AudioInputStream[]): AudioInputStream</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MyRecord634084330[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MyRecord</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actionPerformed(e: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ capture()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ play()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ save()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showgui()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stop()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+}
+
+'edges
+Main93166550 -> AudioEditorGUI634084330[label="edit
+[0..1]"];
+Main93166550 -> AudioFileReader634084330[label="fileReader
+[0..1]"];
+Main93166550 -> AudioMixer634084330[label="mixer
+[0..1]"];
+Main93166550 -> MultiEffectsProcessorUI258518842[label="effect
+[0..1]"];
+Main93166550 -> MyRecord634084330[label="record
+[0..1]"];
+Main93166550 -> Oscilloscope258518842[label="myScope
+[0..1]"];
+MultiEffectsProcessorUI258518842 -> FileIn658507866[arrowhead=none];
+MultiEffectsProcessorUI258518842 -> FileOut658507866[arrowhead=none];
+MultiEffectsProcessorUI258518842 -> LineIn658507866[arrowhead=none];
+MultiEffectsProcessorUI258518842 -> LineOut658507866[arrowhead=none];
+MultiEffectsProcessorUI258518842 -> Pedal1796506170[label="compressor
+[0..1]"];
+MultiEffectsProcessorUI258518842 -> Pedal1796506170[label="delay
+[0..1]"];
+MultiEffectsProcessorUI258518842 -> Pedal1796506170[label="overdrive
+[0..1]"];
+Pedal1796506170 -> Compressor1796506170[arrowhead=none, arrowtail=empty, dir=both];
+Pedal1796506170 -> Delay1796506170[arrowhead=none, arrowtail=empty, dir=both];
+Pedal1796506170 -> Overdrive1796506170[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
